@@ -60,8 +60,9 @@ require("lazy").setup({
 
 require('mini.pick').setup()
 
-map('n', '<leader>f', ":Pick files<CR>")
-
+map('n', '<leader>ff', ":Pick files<CR>")
+map('n', '<leader>fg', ":Pick grep_live<CR>")
+map('n', '<leader>fb', ":Pick buffers<CR>")
 
 -- Lookup this for language server names:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
@@ -83,3 +84,8 @@ do
 			end
 	})
 end
+
+map('n', 'K', vim.lsp.buf.hover, { desc = 'Show hover' })
+map('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
+map('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation'})
+map('n', 'gr', vim.lsp.buf.references, bufopts, { desc = 'Show references' })
