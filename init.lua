@@ -52,7 +52,7 @@ require("lazy").setup({
 			"nvim-mini/mini.pick",
 			lazy = false,
 		},
-  	{"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
+  	{"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" },
 		{ "https://github.com/neovim/nvim-lspconfig" },
 	},
   checker = { enabled = false },
@@ -89,3 +89,8 @@ map('n', 'K', vim.lsp.buf.hover, { desc = 'Show hover' })
 map('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 map('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation'})
 map('n', 'gr', vim.lsp.buf.references, bufopts, { desc = 'Show references' })
+
+map("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+map("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+map("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+map("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
